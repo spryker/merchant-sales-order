@@ -29,15 +29,15 @@ class MerchantReferenceOrderItemExpanderPreSavePlugin extends AbstractPlugin imp
      *
      * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
      * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param \Generated\Shared\Transfer\SpySalesOrderItemEntityTransfer $salesOrderItemEntityTransfer
+     * @param \Generated\Shared\Transfer\SpySalesOrderItemEntityTransfer $salesOrderItemEntity
      *
      * @return \Generated\Shared\Transfer\SpySalesOrderItemEntityTransfer
      */
     public function expandOrderItem(
         QuoteTransfer $quoteTransfer,
         ItemTransfer $itemTransfer,
-        SpySalesOrderItemEntityTransfer $salesOrderItemEntityTransfer
+        SpySalesOrderItemEntityTransfer $salesOrderItemEntity
     ): SpySalesOrderItemEntityTransfer {
-        return $this->getFacade()->expandOrderItemWithMerchant($salesOrderItemEntityTransfer, $itemTransfer);
+        return $this->getFacade()->expandOrderItemWithMerchant($salesOrderItemEntity, $itemTransfer);
     }
 }
